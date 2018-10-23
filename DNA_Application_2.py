@@ -57,27 +57,6 @@ def get_dict_gene_cpg(dict):    #Creating a dictionary, where the key - gene, da
                 dict_genes_cpg[tmp[j]] += ";" + key
     return dict_genes_cpg
 
-
-def get_value(cpg):
-    file = open("average_beta.txt", 'r')
-    sum = 0
-    file.readline()
-    total_sum = 0
-    while True:
-        tmp = file.readline()
-        if (len(tmp) == 0):
-            print("This cps not find!!!")
-            break
-        tmp = tmp.split()
-        if tmp[0] != cpg:
-            continue
-        else:
-            for i in range(1, len(tmp)):
-                sum += float(tmp[i])
-            total_sum = sum / (len(tmp) - 1)
-            break
-    return total_sum
-
 def result_table():
     print("Wait, the operation is in progress ...")
     d = correct_data()
